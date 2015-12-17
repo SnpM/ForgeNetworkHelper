@@ -5,8 +5,8 @@ namespace Lockstep
 {
     public class ForgeNetworkHelperTester : BehaviourHelper
     {
-        string IP = "127.0.0.1";
-        int RoomSize = 1;
+        public string IP = "127.0.0.1";
+        public int RoomSize = 1;
 
 
         void OnGUI () {
