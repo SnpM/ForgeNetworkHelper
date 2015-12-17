@@ -38,7 +38,6 @@ namespace Lockstep
         }
 
         void OnDisable () {
-            Networking.Disconnect();
         }
     }
 }
