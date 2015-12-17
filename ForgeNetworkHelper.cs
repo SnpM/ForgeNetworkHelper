@@ -9,7 +9,7 @@ using System;
 namespace Lockstep {
     //TODO: Finish ForgeNetworkHelper
     public class ForgeNetworkHelper : NetworkHelper {
-        private const ushort Port = ushort.MaxValue / 2;
+        private const ushort Port = 1000;
         private  NetWorker _gameNetworker;
 
         public NetWorker GameNetworker {
@@ -49,7 +49,7 @@ namespace Lockstep {
 
         public ForgeNetworkHelper () {
             Networking.connected += HandleConnected;
-
+            Debug.Log ("created");
         }
 
         public override void Connect (string ip) {
@@ -68,6 +68,7 @@ namespace Lockstep {
         
         private void HandleConnected (NetWorker socket) {
             GameNetworker = socket;
+            Debug.Log("Connected");
         }
 
         public override void Disconnect () {
@@ -80,7 +81,6 @@ namespace Lockstep {
         }
 
         void HandleData (MessageType messageType, NetworkingStream stream) {
-
             LSUtility.bufferBytes.FastClear ();
 
             for (int i = 0; i < stream.Bytes.Size - 1; i++) {
@@ -112,6 +112,8 @@ namespace Lockstep {
                     receivers);
             }
         }
+
+
     }
 }
 #endif
