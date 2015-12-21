@@ -50,7 +50,6 @@ namespace Lockstep {
 
         public ForgeNetworkHelper () {
             Networking.connected += HandleConnected;
-            Debug.Log ("Created");
         }
 
         public override void Connect (string ip) {
