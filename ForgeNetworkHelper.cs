@@ -33,8 +33,8 @@ namespace Lockstep {
                 return GameNetworker != null && GameNetworker.Connected;}
         }
 
-        public override ushort ID {
-            get { return GameNetworker != null ? (ushort)GameNetworker.Me.NetworkId : (ushort)0;}
+        public override int ID {
+            get { return GameNetworker != null ? (int)GameNetworker.Me.NetworkId : (int)0;}
         }
 
         public override bool IsServer {
