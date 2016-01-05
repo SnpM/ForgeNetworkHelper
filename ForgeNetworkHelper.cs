@@ -5,8 +5,8 @@ using UnityEngine;
 using System.Collections;
 using BeardedManStudios.Network;
 using System;
-
-namespace Lockstep {
+using Lockstep.NetworkHelpers;
+namespace Lockstep.NetworkHelpers {
     public class ForgeNetworkHelper : NetworkHelper {
         private const ushort Port = ushort.MaxValue / 2;
         private  NetWorker _gameNetworker;
@@ -92,11 +92,11 @@ namespace Lockstep {
 
          BMSByte bufferBites = new BMSByte ();
 
-        public override void SendMessageToServer (MessageType messageType, byte[] data) {
+        protected override void OnSendMessageToServer (MessageType messageType, byte[] data) {
             SendMessage (messageType, NetworkReceivers.Server, data);
         }
 
-        public override void SendMessageToAll (MessageType messageType, byte[] data) {
+        protected override void OnSendMessageToAll (MessageType messageType, byte[] data) {
             SendMessage (messageType, NetworkReceivers.All, data);
         }
 
