@@ -5,7 +5,7 @@ using UnityEngine;
 using System.Collections;
 using BeardedManStudios.Network;
 using System;
-
+using Lockstep.NetworkHelpers;
 namespace Lockstep.NetworkHelpers {
     public class ForgeNetworkHelper : NetworkHelper {
         private const ushort Port = ushort.MaxValue / 2;
