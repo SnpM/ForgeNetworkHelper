@@ -36,8 +36,6 @@ namespace Lockstep
 
             GUILayout.EndVertical();
         }
-
-        void OnDisable () {
-        }
+        
     }
 }
